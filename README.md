@@ -55,7 +55,7 @@ Chatbot Code
 	
 	# Generating response
 	def response(user_response):
-	    Jenny_response='Welcome to Chendu Palace. May I take your order?'
+	    Jenny_response='Welcome to Chengdu Palace. May I take your order?'
 	    sent_tokens.append(user_response)
 	    TfidfVec = TfidfVectorizer(tokenizer=LemNormalize, stop_words='english')
 	    tfidf = TfidfVec.fit_transform(sent_tokens)
