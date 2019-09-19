@@ -1,12 +1,14 @@
 # PhilbotUSRepository
 Corpora Text
-A chatbot is a piece of software that conducts a conversation via auditory or textual methods.[1] Such programs are often designed to convincingly simulate how a human would behave as a conversational partner, although as of 2019, they are far short of being able to pass the Turing test.[2] Chatbots are typically used in dialog systems for various practical purposes including customer service or information acquisition. Some chatbots use sophisticated natural language processing systems, but many simpler ones scan for keywords within the input, then pull a reply with the most matching keywords, or the most similar wording pattern, from a database.
-The term "ChatterBot" was originally coined by Michael Mauldin (creator of the first Verbot, Julia) in 1994 to describe these conversational programs.[3] Today, most chatbots are accessed via virtual assistants such as Google Assistant and Amazon Alexa, via messaging apps such as Facebook Messenger or WeChat, or via individual organizations' apps and websites.[4][5] Chatbots can be classified into usage categories such as conversational commerce (e-commerce via chat), analytics, communication, customer support, design, developer tools, education, entertainment, finance, food, games, health, HR, marketing, news, personal, productivity, shopping, social, sports, travel and utilities.[6]
-Beyond chatbots, Conversational AI refers to the use of messaging apps, speech-based assistants and chatbots to automate communication and create personalized customer experiences at scale.[7]
+1.	The immediately below code is a POC baseline for a future project. The remaining step is building an API to demonstrate satisfactory user interaction. Completion expected by early October, 2019.
+2.	The next project is building a web app accessible to the NLP chatbot all on top of a Mongo db (linked by an idx menue string, tbd). This application is meant to streamline restaurant management of customer flow from initial order to payment and exit. It id intended to work for both take out and eat in scenarios.The intention is to greatly reduce customer seating wait times, by close scheduling of check-in, seating, and serving times. This app will better synchronize and optimize the work of the check-in, plating preparation, serving, and check-out process. This project is nearing the completion of the requirements gathering phase. Project inception targeted for October, 2019, with project notional completion for sometime in June, 2019.
+3.	The next proposed project is a web facing NLP chatbot that uses different algorithms from current conventional search engines. The POC would operate in the area of online job search, and would incorporate job advertising with directory access such as Dunn & Bradstreet. This would greatly optimize the job searcher’s response time and effectiveness, by responding to a position opening with a much better targeted response vs. response to search engine or general response to HR. This search and response optimization is achieved by using specific names or names in an organization, and referencing the position in more specific corporate context. Notional project inception and completion is TBD.
+
 
 Chatbot Code
 
-#Meet Robo: your friend
+
+#Meet Jenny: The Chef
 	
 	#import necessary libraries
 	import io
@@ -58,7 +60,7 @@ Chatbot Code
 	
 	# Generating response
 	def response(user_response):
-	    robo_response=''
+	    Jenny_response='Welcome to Chendu Palace. May I take your order?'
 	    sent_tokens.append(user_response)
 	    TfidfVec = TfidfVectorizer(tokenizer=LemNormalize, stop_words='english')
 	    tfidf = TfidfVec.fit_transform(sent_tokens)
@@ -68,29 +70,32 @@ Chatbot Code
 	    flat.sort()
 	    req_tfidf = flat[-2]
 	    if(req_tfidf==0):
-	        robo_response=robo_response+"I am sorry! I don't understand you"
-	        return robo_response
+	        Jenny_response=Jenny_response+"I am sorry! I don't understand you"
+	        return Jenny_response
 	    else:
-	        robo_response = robo_response+sent_tokens[idx]
-	        return robo_response
+	        Jenny_response = Jenny_response+sent_tokens[idx]
+	        return Jenny_response
 	
 	
 	flag=True
-	print("ROBO: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
+	print("JENNY: My name is Jenny. I will answer your questions about your menu selection. I can also tell you what time it will be
+	ready.If you want to exit, type Bye!")
 	while(flag==True):
 	    user_response = input()
 	    user_response=user_response.lower()
 	    if(user_response!='bye'):
 	        if(user_response=='thanks' or user_response=='thank you' ):
 	            flag=False
-	            print("ROBO: You are welcome..")
+	            print("JENNY: You are welcome..")
 	        else:
 	            if(greeting(user_response)!=None):
-	                print("ROBO: "+greeting(user_response))
+	                print("JENNY: "+greeting(user_response))
 	            else:
-	                print("ROBO: ",end="")
+	                print("JENNY: ",end="")
 	                print(response(user_response))
 	                sent_tokens.remove(user_response)
 	    else:
 	        flag=False
-	        print("ROBO: Bye! take care..")    
+	        print("JENNY: Bye! take care..")    
+
+
