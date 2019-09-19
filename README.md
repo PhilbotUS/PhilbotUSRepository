@@ -1,12 +1,7 @@
 # PhilbotUSRepository
-Corpora Text
-1.	The immediately below code is a POC baseline for a future project. Full chatbot text is tbd upon business owner approval. The remaining step is building an API to demonstrate satisfactory user interaction, with minimal Mongo datasets.  Completion expected by early October, 2019.
-2.	The next project is to build a sufficiently accessible API to the NLP chatbot all on top of a Mongo db (linked by an idx menue string, tbd). The Mongo db will contain all of the menu selections and approximate cook times.Pick up or seating time is then pulled from the system clock time and then distributed to the customer, check in area, kitchen staff, and wait staff.This application is meant to streamline restaurant management of customer flow from initial order to payment and exit. It is intended to work for both take out and eat in scenarios.The intention is to greatly reduce customer seating wait times, by close scheduling of check-in, seating, and serving times. This app will better synchronize and optimize the work of the check-in, plating preparation, serving, and check-out process. This project is nearing the completion of the requirements gathering phase. Project development inception targeted for late October, 2019, with project notional completion for sometime in June, 2019.
-3.	The next proposed project is a web facing NLP chatbot that uses different algorithms from current conventional search engines. The POC would operate in the area of online job search, and would incorporate job advertising with directory access such as Dunn & Bradstreet. This would greatly optimize the job searcher’s response time and effectiveness, by responding to a position opening with a much better targeted response vs. response to search engine or general response to HR. This search and response optimization is achieved by using specific names or names in an organization, and referencing the position in more specific corporate context. Notional project inception and completion is TBD.
-
+Corpora Text - This will later become the restaurant menu
 
 Chatbot Code
-
 
 #Meet Jenny: The Chef
 	
@@ -30,7 +25,7 @@ Chatbot Code
 	#nltk.download('wordnet') # first-time use only
 	
 	
-	#Reading in the menu
+	#Reading in the corpora text
 	with open('chatbot.txt','r', encoding='utf8', errors ='ignore') as fin:
 	    raw = fin.read().lower()
 	
