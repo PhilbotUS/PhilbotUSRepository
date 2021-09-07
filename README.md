@@ -1,5 +1,5 @@
 # PhilbotUSRepository
-Corpora Text - This become the Chengdu Palace restaurant menu
+Restaurant Menu Text - This will become the Chengdu Palace restaurant menu
 
 Chatbot Code
 
